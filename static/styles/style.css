@@ -1,0 +1,24 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Arial', sans-serif;
+}
+
+img {
+    width: 20%;
+}
+
+li {
+    width: 60%;
+    min-height: auto;
+    max-height: auto;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    padding: 4vh 2vw;
+    border-radius: 20px;
+    margin-top: 3vh;
+}
+
+input {
+    border-radius: 20px;
+}
