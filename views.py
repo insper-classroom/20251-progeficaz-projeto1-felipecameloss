@@ -14,16 +14,6 @@ def index():
 
 def edit_page(id):
 
-    # titulo = request.form.get('titulo')
-    # detalhes = request.form.get('detalhes')
-    # con=sql.connect("db_web.db")
-    # con.row_factory=sql.Row
-    # cur=con.cursor()
-    # cur.execute("select Título=?, Detalhes=? where ID=?",(titulo, detalhes,id))
-    # notes=cur.fetchall()
-
-    # return load_template('components/edit_note.html').format(id=id, titulo=titulo, detalhes=detalhes)
-
     con = sql.connect("db_web.db")
     con.row_factory = sql.Row
     cur = con.cursor()
@@ -44,3 +34,6 @@ def delete_notes(id):
     
 def save_note(id):
     save_note_to_db(id)
+
+def error_404():
+    return load_template('components/404.html'), 404

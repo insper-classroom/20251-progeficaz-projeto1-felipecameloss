@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, request, redirect
+from flask import Flask, render_template_string, request, redirect, render_template
 import sqlite3 as sql
 import views
 
@@ -36,5 +36,8 @@ def save_note(id):
     views.save_note(id)
     return redirect('/')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return views.error_404()
 if __name__ == '__main__':
     app.run(debug=True)
