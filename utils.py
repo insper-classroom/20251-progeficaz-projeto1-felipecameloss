@@ -28,3 +28,17 @@ def delete_note_from_db(id):
     cur.execute("delete from notes where ID=?",(id,))
     con.commit()
     con.close()
+
+def save_note_to_db(id):
+
+    titulo = request.form.get('titulo')
+    detalhes = request.form.get('detalhes')
+
+    con = sql.connect("db_web.db")
+    cur = con.cursor()
+    cur.execute(
+        'UPDATE notes SET Título = ?, Detalhes = ? WHERE ID = ?',
+        (titulo, detalhes, id)
+    )
+    con.commit()
+    con.close()
